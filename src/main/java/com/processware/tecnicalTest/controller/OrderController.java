@@ -1,6 +1,5 @@
 package com.processware.tecnicalTest.controller;
 
-import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +13,8 @@ import com.processware.tecnicalTest.domain.Order;
 @RequestMapping("/order")
 public class OrderController {
 
-	@GetMapping("/detail")
-	@Procedure(name = "json")
-	public ResponseEntity<?> orderDetail() {
+	@GetMapping("/")
+	public ResponseEntity<Order> orderDetail() {
 		Order order = new Order(1, null);
 		Box box1 = new Box("box 1", null);
 		Box box2 = new Box("box 2", null);
